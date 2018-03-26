@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+  }
+  },
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true,
+    "jest": true
+},
+"rules": {
+  "max-len": ["error", {
+    "code": 80,
+    "ignoreComments": true,
+    "ignoreUrls": true,
+    "ignoreStrings": true,
+    "ignoreTemplateLiterals": true,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+        }]
+
+    }]
+}
+}
