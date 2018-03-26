@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - stable
+
+install:
+  - npm install
+
+before_script:
+  - psql -c 'drop database if exists travis;' -U postgres
+  - psql -c 'create database travis;' -U postgres
+  - NODE_ENV=test ./node_modules/.bin/sequelize db:migrate
+
+script:
+  - npm test
+
+after_success: npm run coveralls
